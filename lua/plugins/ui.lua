@@ -1,14 +1,14 @@
 return {
 	{
-		'nvimdev/dashboard-nvim',
-		event = 'VimEnter',
-		config = function()
-			require('dashboard').setup {
-			}
+		'goolord/alpha-nvim',
+		dependencies = {
+			'echasnovski/mini.icons',
+			'nvim-lua/plenary.nvim'
+		},
+		config = function ()
+			require'alpha'.setup(require'alpha.themes.theta'.config)
 		end,
-		dependencies = { {'nvim-tree/nvim-web-devicons'}}
-	},
-
+	},	
 	{
 		'nvim-lualine/lualine.nvim',
 		dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -69,5 +69,12 @@ return {
 			}
 		end,
 
+	},
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		---@module "ibl"
+		---@type ibl.config
+		opts = {},
 	}
 }
