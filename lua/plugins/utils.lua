@@ -53,8 +53,8 @@ return {
 	},
 	config = function()
 		require("nvim-tree").setup {
-			vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" }),
-			vim.keymap.set("n", "<leader>ft", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
+			vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "nvimtree toggle window" }),
+			vim.keymap.set("n", "<leader>ft", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" }),
 
 
 		}
@@ -73,7 +73,30 @@ return {
 	},
 	version = '^1.0.0', -- optional: only update when a new 1.x version is released
 },
+{
+	"ThePrimeagen/harpoon",
+	branch = "harpoon2",
+	dependencies = { "nvim-lua/plenary.nvim" },
+	config = function()
+		local harpoon = require("harpoon")
 
+		-- REQUIRED
+		harpoon:setup()
+		-- REQUIRED
+
+		vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+		vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+		vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
+		vim.keymap.set("n", "<C-t>", function() harpoon:list():select(2) end)
+		vim.keymap.set("n", "<C-n>", function() harpoon:list():select(3) end)
+		vim.keymap.set("n", "<C-s>", function() harpoon:list():select(4) end)
+
+		-- Toggle previous & next buffers stored within Harpoon list
+		vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
+		vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
+	end
+}
 }
 
 
