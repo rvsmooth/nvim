@@ -19,19 +19,19 @@ return {
 			dashboard.button("SPC f n", "  New file", ":ene <BAR> startinsert <CR>"),
 			dashboard.button("q", "󰩈  Quit", ":qa<CR>"),
 		}
-
-		local handle = io.popen("fortune")
-		local fortune = handle:read("*a")
-		handle:close()
-		dashboard.section.footer.val = fortune
-
+		local handle = io.popen("fortune") -- Executes the 'fortune' command in a separate process
+		local fortune = handle:read("*a") -- Reads all output from the command
+		handle:close() -- Closes the file handle
+		dashboard.section.footer.val = fortune -- Sets the footer value in the dashboard to the fortune output
 		-- Set margins and paddings
 		local opts = {
 			layout = {
-				{ type = "padding", val = 12 }, -- Top padding
+				{ type = "padding", val = 8 }, -- Top padding
 				dashboard.section.header,
-				{ type = "padding", val = 4 }, -- Padding between header and buttons
+				{ type = "padding", val = 6 }, -- Padding between header and buttons
 				dashboard.section.buttons,
+		                { type = "padding", val = 7 },
+				dashboard.section.bottom_buttons,
 				dashboard.section.footer,
 			},
 		}
