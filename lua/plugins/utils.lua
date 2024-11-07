@@ -197,4 +197,20 @@ return {
 	end, { desc = "Format file or range (in visual mode)" })
 		end,
 	},
+	{
+		"ngtuonghy/live-server-nvim",
+		event = "VeryLazy",
+		build = ":LiveServerInstall",
+		config = function()
+	require("live-server-nvim").setup({
+		custom = {
+			"--port=8080",
+			"--no-css-inject",
+		},
+		serverPath = vim.fn.stdpath("data") .. "/live-server/", --default
+		open = "folder", -- folder|cwd     --default
+	})
+	vim.keymap.set({ "n", "v" }, "<leader>ls", ":LiveServerToggle<CR>")
+		end,
+	},
 }

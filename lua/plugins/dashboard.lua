@@ -37,6 +37,5 @@ return {
 		}
 
 		alpha.setup(opts)
-		vim.cmd([[autocmd User AlphaReady echo 'ready']])
 	end,
 }

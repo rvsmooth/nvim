@@ -66,7 +66,6 @@ return {
 	require("mason").setup({})
 	require("mason-lspconfig").setup({
 		ensure_installed = {
-			"eslint",
 			"rust_analyzer",
 			"kotlin_language_server",
 			"jdtls",
