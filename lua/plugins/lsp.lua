@@ -66,22 +66,12 @@ return {
 	require("mason").setup({})
 	require("mason-lspconfig").setup({
 		ensure_installed = {
-			"rust_analyzer",
-			"kotlin_language_server",
-			"jdtls",
 			"lua_ls",
 			"jsonls",
 			"html",
-			"elixirls",
-			"tailwindcss",
-			"tflint",
 			"pylsp",
-			"dockerls",
 			"bashls",
 			"marksman",
-			"cucumber_language_server",
-			"gopls",
-			"astro",
 		},
 		handlers = {
 			lsp.default_setup,
