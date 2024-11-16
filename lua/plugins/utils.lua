@@ -41,7 +41,7 @@ return {
 		version = "*",
 		config = function()
 	require("toggleterm").setup({
-		insert_mappings = true, -- whether or not the open mapping applies in insert mode
+		insert_mappings = false, -- whether or not the open mapping applies in insert mode
 		open_mapping = [[<leader>tt]], -- or { [[<c-\>]], [[<c-¥>]] } if you also use a Japanese keyboard.
 		direction = "float",
 		float_opts = { border = "curved" },
