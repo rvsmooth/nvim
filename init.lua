@@ -1,3 +1,3 @@
 require("config.lazy")
 require("personal")
-vim.cmd.colorscheme "dracula"
+vim.cmd.colorscheme "catppuccin"
