@@ -26,7 +26,7 @@ return {
 		-- Set margins and paddings
 		local opts = {
 			layout = {
-				{ type = "padding", val = 8 }, -- Top padding
+				{ type = "padding", val = 12 }, -- Top padding
 				dashboard.section.header,
 				{ type = "padding", val = 6 }, -- Padding between header and buttons
 				dashboard.section.buttons,
