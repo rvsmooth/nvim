@@ -96,7 +96,6 @@ return {
 	vim.keymap.set("n", "<C-e>", function()
 		harpoon.ui:toggle_quick_menu(harpoon:list())
 	end)
-
 	vim.keymap.set("n", "<C-h>", function()
 		harpoon:list():select(1)
 	end)
@@ -190,19 +189,28 @@ return {
 		end,
 	},
 	{
-		"ngtuonghy/live-server-nvim",
+		"folke/which-key.nvim",
 		event = "VeryLazy",
-		build = ":LiveServerInstall",
-		config = function()
-	require("live-server-nvim").setup({
-		custom = {
-			"--port=8080",
-			"--no-css-inject",
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
 		},
-		serverPath = vim.fn.stdpath("data") .. "/live-server/", --default
-		open = "folder", -- folder|cwd     --default
-	})
-	vim.keymap.set({ "n", "v" }, "<leader>ls", ":LiveServerToggle<CR>")
-		end,
+		keys = {
+			{
+				"<leader>?",
+				function()
+	require("which-key").show({ global = false })
+				end,
+				desc = "Buffer Local Keymaps (which-key)",
+			},
+		},
 	},
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = function()
+	require("nvim-autopairs").setup({})
+		end
+	}
 }
