@@ -11,6 +11,12 @@ return {
 		"Mofiqul/dracula.nvim",
 	},
 	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
+	{
 		"nvim-treesitter/nvim-treesitter",
 		config = function()
 	require("nvim-treesitter.configs").setup({

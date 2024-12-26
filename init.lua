@@ -1,4 +1,4 @@
 require("config.lazy")
 require("personal")
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "tokyonight"
 
