@@ -21,7 +21,7 @@ return {
 		}
 		local handle = io.popen("fortune") -- Executes the 'fortune' command in a separate process
 		local fortune = handle:read("*a") -- Reads all output from the command
-		handle:close() -- Closes the file handle
+		handle:close()           -- Closes the file handle
 		dashboard.section.footer.val = fortune -- Sets the footer value in the dashboard to the fortune output
 		-- Set margins and paddings
 		local opts = {
@@ -30,7 +30,7 @@ return {
 				dashboard.section.header,
 				{ type = "padding", val = 6 }, -- Padding between header and buttons
 				dashboard.section.buttons,
-		                { type = "padding", val = 7 },
+				{ type = "padding", val = 7 },
 				dashboard.section.bottom_buttons,
 				dashboard.section.footer,
 			},
