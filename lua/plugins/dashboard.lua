@@ -19,10 +19,10 @@ return {
 			dashboard.button("SPC f n", "  New file", ":ene <BAR> startinsert <CR>"),
 			dashboard.button("q", "󰩈  Quit", ":qa<CR>"),
 		}
-		local handle = io.popen("fortune") -- Executes the 'fortune' command in a separate process
-		local fortune = handle:read("*a") -- Reads all output from the command
-		handle:close()           -- Closes the file handle
-		dashboard.section.footer.val = fortune -- Sets the footer value in the dashboard to the fortune output
+		local handle = io.popen("fortune $HOME/.config/nvim/quotes/quotes") -- Executes the 'fortune' command in a separate process
+		local fortune = handle:read("*a")                     -- Reads all output from the command
+		handle:close()                                        -- Closes the file handle
+		dashboard.section.footer.val = fortune
 		-- Set margins and paddings
 		local opts = {
 			layout = {

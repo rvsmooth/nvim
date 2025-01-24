@@ -1,14 +1,17 @@
 return {
 	{
-		"catppuccin/nvim",
+		"catppuccin/nvim"
 	},
 	{
-		"Mofiqul/dracula.nvim",
+		"Mofiqul/dracula.nvim"
 	},
 	{
 		"gbprod/nord.nvim"
 	},
 	{
-		"folke/tokyonight.nvim",
+		"folke/tokyonight.nvim"
 	},
+	{
+		"ellisonleao/gruvbox.nvim"
+	}
 }
